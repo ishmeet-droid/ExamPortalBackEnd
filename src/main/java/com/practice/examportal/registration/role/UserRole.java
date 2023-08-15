@@ -1,6 +1,6 @@
-package com.practice.examportal.role;
+package com.practice.examportal.registration.role;
 
-import com.practice.examportal.user.UserEntity;
+import com.practice.examportal.registration.user.UserEntity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

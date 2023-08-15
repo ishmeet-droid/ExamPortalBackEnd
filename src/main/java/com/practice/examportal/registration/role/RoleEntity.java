@@ -1,4 +1,4 @@
-package com.practice.examportal.role;
+package com.practice.examportal.registration.role;
 
 
 import java.util.HashSet;

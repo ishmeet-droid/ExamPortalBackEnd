@@ -1,7 +1,7 @@
-package com.practice.examportal.user;
+package com.practice.examportal.registration.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.practice.examportal.role.UserRole;
+import com.practice.examportal.registration.role.UserRole;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -43,6 +43,10 @@ public class UserEntity {
     // @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<UserRole> userRoles = new HashSet<>();
+
+    // public Set<UserRole> getUserRoles() {
+    //     return userRoles;
+    // }
 
 
 
