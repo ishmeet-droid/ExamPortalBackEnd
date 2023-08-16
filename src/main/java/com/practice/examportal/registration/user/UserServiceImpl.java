@@ -41,5 +41,18 @@ public class UserServiceImpl implements UserService {
        }
        return local;
     }
+
+    @Override
+    public UserEntity getUserByUserName(String username) {
+      
+        return userRepo.findByUsername(username);
+    }
+
+    @Override
+    public void deleteUser(String username) {
+       UserEntity user = this.userRepo.findByUsername(username);
+
+       this.userRepo.deleteById(user.getId());
+    }
     
 }

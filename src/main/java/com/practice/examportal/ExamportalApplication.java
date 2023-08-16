@@ -28,7 +28,9 @@ public class ExamportalApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		System.out.println("Testing User Service");
+		
 
+		//creating user by Command Line
 		UserEntity us = new UserEntity();
 
 		us.setFName("ish");
