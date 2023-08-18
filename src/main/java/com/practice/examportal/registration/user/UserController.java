@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,15 +52,13 @@ public class UserController {
 
             userCreated = userService.createUser(user, userRoleSet);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+         
             e.printStackTrace();
         }
         return new ResponseEntity<>(userCreated,HttpStatus.CREATED);
     }
 
-    // TODO add get method, delete method by the help of username... in service and
-    // controller...
-
+  
     @GetMapping("/show-users/{username}")
     public ResponseEntity<UserEntity> getUserEntity(@PathVariable("username") String username) {
 
@@ -74,7 +71,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{username}")
-    public ResponseEntity deleteUser(@PathVariable("username") String username){
+    public ResponseEntity<UserEntity> deleteUser(@PathVariable("username") String username){
         
         this.userService.deleteUser(username);
         
