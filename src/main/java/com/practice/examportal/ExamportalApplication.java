@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.practice.examportal.registration.role.RoleEntity;
+import com.practice.examportal.registration.role.RoleRepo;
 import com.practice.examportal.registration.role.UserRole;
 import com.practice.examportal.registration.user.UserEntity;
 import com.practice.examportal.registration.user.UserService;
@@ -15,10 +16,10 @@ import com.practice.examportal.registration.user.UserService;
 @SpringBootApplication
 public class ExamportalApplication implements CommandLineRunner{
 
-	private UserService userService;
+	RoleRepo roleRepo;
 
-	ExamportalApplication(UserService userService){
-		this.userService = userService;
+	ExamportalApplication(RoleRepo roleRepo){
+		this.roleRepo = roleRepo;
 	}
 
 	public static void main(String[] args) {
@@ -31,15 +32,15 @@ public class ExamportalApplication implements CommandLineRunner{
 		
 
 		//creating user by Command Line
-		UserEntity us = new UserEntity();
+		// UserEntity us = new UserEntity();
 
-		us.setFName("ish");
-		us.setLName("kl");
-		us.setEmail("@gmail");
-		us.setPassword("********");
-		us.setPhone("908979");
-		us.setProfile("image//");
-		us.setUsername("noob");
+		// us.setFName("ish");
+		// us.setLName("kl");
+		// us.setEmail("@gmail");
+		// us.setPassword("********");
+		// us.setPhone("908979");
+		// us.setProfile("image//");
+		// us.setUsername("noob");
 
 		RoleEntity role1 = new RoleEntity();
 		role1.setRoleName("ADMIN");
@@ -47,23 +48,30 @@ public class ExamportalApplication implements CommandLineRunner{
 		RoleEntity role2 = new RoleEntity();
 		role2.setRoleName("NORMAL");
 
-		Set<UserRole> userRoleSet = new HashSet<>();
+		
+        roleRepo.save(role1);
+		roleRepo.save(role2);
 
-		UserRole ur1 = new UserRole();
-		ur1.setRoleEntity(role1);
-		ur1.setUserEntity(us);
+		// for(UserRole userRole : userRoles){
+        //     //     roleRepo.save(userRole.getRoleEntity());
 
-		UserRole ur2 = new UserRole();
-		ur2.setRoleEntity(role2);
-		ur2.setUserEntity(us);
+		// Set<UserRole> userRoleSet = new HashSet<>();
 
-		userRoleSet.add(ur1);
-		userRoleSet.add(ur2);
+		// UserRole ur1 = new UserRole();
+		// ur1.setRoleEntity(role1);
+		// ur1.setUserEntity(us);
+
+		// UserRole ur2 = new UserRole();
+		// ur2.setRoleEntity(role2);
+		// ur2.setUserEntity(us);
+
+		// userRoleSet.add(ur1);
+		// userRoleSet.add(ur2);
 
 
-		UserEntity user1 = userService.createUser(us, userRoleSet);
+		// UserEntity user1 = userService.createUser(us, userRoleSet);
 
-		System.out.println(user1.getUsername());
+		// System.out.println(user1.getUsername());
 
 		
 	}

@@ -32,9 +32,9 @@ public class UserServiceImpl implements UserService {
        }
        else{
         
-            for(UserRole userRole : userRoles){
-                roleRepo.save(userRole.getRoleEntity());
-            }
+            // for(UserRole userRole : userRoles){
+            //     roleRepo.save(userRole.getRoleEntity());
+            // }
 
             user.setUserRoles(userRoles);
             local =  userRepo.save(user);
