@@ -4,7 +4,7 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import com.practice.examportal.registration.role.RoleRepo;
+// import com.practice.examportal.registration.role.RoleRepo;
 import com.practice.examportal.registration.role.UserRole;
 
 @Service
@@ -12,12 +12,17 @@ public class UserServiceImpl implements UserService {
 
     private UserRepo userRepo;
 
-    private RoleRepo roleRepo;
+    // private RoleRepo roleRepo;
 
-    UserServiceImpl(UserRepo userRepo, RoleRepo roleRepo){
+    // UserServiceImpl(UserRepo userRepo, RoleRepo roleRepo){
+
+    //     this.userRepo = userRepo;
+    //     this.roleRepo = roleRepo;
+    // }
+
+    UserServiceImpl(UserRepo userRepo){
 
         this.userRepo = userRepo;
-        this.roleRepo = roleRepo;
     }
 
     //creating user

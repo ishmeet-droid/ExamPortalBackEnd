@@ -1,7 +1,7 @@
 package com.practice.examportal;
 
-import java.util.HashSet;
-import java.util.Set;
+// import java.util.HashSet;
+// import java.util.Set;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.practice.examportal.registration.role.RoleEntity;
 import com.practice.examportal.registration.role.RoleRepo;
-import com.practice.examportal.registration.role.UserRole;
-import com.practice.examportal.registration.user.UserEntity;
-import com.practice.examportal.registration.user.UserService;
+// import com.practice.examportal.registration.role.UserRole;
+// import com.practice.examportal.registration.user.UserEntity;
+// import com.practice.examportal.registration.user.UserService;
 
 @SpringBootApplication
 public class ExamportalApplication implements CommandLineRunner{
