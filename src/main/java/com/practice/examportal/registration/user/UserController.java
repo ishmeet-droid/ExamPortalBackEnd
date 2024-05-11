@@ -51,7 +51,7 @@ public class UserController {
             List<RoleEntity> roles =  this.roleRepo.findAll();
 
             
-
+            user.setProfile("default.png");
             Set<UserRole> userRoleSet = new HashSet<>();
 
             // UserRole ur1 = new UserRole();
